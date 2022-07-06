@@ -28,7 +28,7 @@ void Netif::on_ppp_changed(void *arg, esp_event_base_t event_base,
 {
     auto *ppp = static_cast<Netif *>(arg);
     if (event_id < NETIF_PP_PHASE_OFFSET) {
-        ESP_LOGI("esp_modem_netif", "PPP state changed event %d", event_id);
+        ESP_LOGI("esp_modem_netif", "PPP state changed event %" PRIu32, event_id);
         // only notify the modem on state/error events, ignoring phase transitions
         ppp->signal.set(PPP_EXIT);
     }

@@ -36,7 +36,7 @@ static const int DISCONNECT_BIT = BIT1;
 static void on_ip_event(void *arg, esp_event_base_t event_base,
                         int32_t event_id, void *event_data)
 {
-    ESP_LOGD(TAG, "IP event! %d", event_id);
+    ESP_LOGD(TAG, "IP event! %" PRIu32, event_id);
     if (event_id == IP_EVENT_PPP_GOT_IP) {
         esp_netif_dns_info_t dns_info;
         ip_event_got_ip_t *event = (ip_event_got_ip_t *)event_data;
